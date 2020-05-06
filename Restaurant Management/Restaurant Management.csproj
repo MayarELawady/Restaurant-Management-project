@@ -128,13 +128,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\Resturant.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StuffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005010019484_initial.cs" />
-    <Compile Include="Migrations\202005010019484_initial.designer.cs">
-      <DependentUpon>202005010019484_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202005052129359_initial.cs" />
+    <Compile Include="Migrations\202005052129359_initial.designer.cs">
+      <DependentUpon>202005052129359_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005061806577_updatedatatbase_after_constrains.cs" />
+    <Compile Include="Migrations\202005061806577_updatedatatbase_after_constrains.designer.cs">
+      <DependentUpon>202005061806577_updatedatatbase_after_constrains.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -180,6 +186,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Stuff\LoggedIn.cshtml" />
+    <Content Include="Views\Stuff\Login.cshtml" />
+    <Content Include="Views\Stuff\Employee.cshtml" />
+    <Content Include="Views\Customer\UpdateProfile.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -198,8 +210,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005010019484_initial.resx">
-      <DependentUpon>202005010019484_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005052129359_initial.resx">
+      <DependentUpon>202005052129359_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005061806577_updatedatatbase_after_constrains.resx">
+      <DependentUpon>202005061806577_updatedatatbase_after_constrains.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
