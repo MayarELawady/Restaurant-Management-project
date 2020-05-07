@@ -9,6 +9,6 @@
     <h4>Hello @Session["UserName".ToString()]</h4>
     
     <p>@Html.ActionLink("Update Profile", "UpdateAdminProfile",new { id = Session["UserId"] },null)</p>
-    
+    <p>@Html.ActionLink("List Employees", "ListEmployees")</p>
 }
 

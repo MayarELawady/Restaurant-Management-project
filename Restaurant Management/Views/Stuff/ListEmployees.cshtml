@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Restaurant_Management.Models.Staff>
+
+@{
+    ViewBag.Title = "ListEmployees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListEmployees</h2>
+
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Daysoff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.Role == 0) { 
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Daysoff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffId }) |
+            @Html.ActionLink("Details", "EmployeeDetails", new { id=item.StaffId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StaffId })
+        </td>
+    </tr>
+    }
+}
+
+</table>

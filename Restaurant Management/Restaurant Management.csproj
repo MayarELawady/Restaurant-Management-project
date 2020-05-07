@@ -189,6 +189,8 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Stuff\UpdateAdminProfile.cshtml" />
+    <Content Include="Views\Stuff\ListEmployees.cshtml" />
+    <Content Include="Views\Stuff\EmployeeDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

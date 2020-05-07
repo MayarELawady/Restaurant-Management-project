@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Restaurant_Management.Context;
 using Restaurant_Management.Models;
 
@@ -107,5 +108,26 @@ namespace Restaurant_Management.Controllers
                 return View();
             }
         }
+        //////////////////////////LIST EMPLOYEES///////////////////////////////////
+        public ActionResult ListEmployees()
+        {
+            return View(db.Staff.ToList());
+        }
+
+        /////////// Employee Detail//////////////////
+        public ActionResult EmployeeDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Staff Employee = db.Staff.Find(id);
+            if (Employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Employee);
+        }
+
     }
 }
