@@ -1,9 +1,14 @@
-﻿
+﻿@model Restaurant_Management.Models.Staff
+    
 @{
     ViewBag.Title = "LoggedIn";
 }
 
 @if (Session["UserId"] != null)
 {
-    <h4>Hello @Session["UserName".ToString()]</h4>}
+    <h4>Hello @Session["UserName".ToString()]</h4>
+    
+    <p>@Html.ActionLink("Update Profile", "UpdateAdminProfile",new { id = Session["UserId"] },null)</p>
+    
+}
 

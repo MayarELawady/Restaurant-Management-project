@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Restaurant_Management.Context;
@@ -70,6 +71,40 @@ namespace Restaurant_Management.Controllers
             else
             {
                 return RedirectToAction("Login");
+            }
+        }
+
+
+        //UPDATE ADMIN PROFILE GET
+
+        public ActionResult UpdateAdminProfile(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Staff stuff = db.Staff.Find(id);
+            if (stuff == null)
+                return HttpNotFound();
+            return View(stuff);
+        }
+        // POST: AdminUpdate
+        [HttpPost]
+        public ActionResult UpdateAdminProfile(Staff stuff)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(stuff).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("LoggedIn");
+                }
+                return View(stuff);
+            }
+            catch
+            {
+                return View();
             }
         }
     }
