@@ -132,11 +132,36 @@ namespace Restaurant_Management.Controllers
         ///////////////SEARCH FOR EMPLOYEE///////////////
         public ActionResult SearchEmployee(string search)
         {
-
-    return View(db.Staff.Where(x => x.UserName.Contains(search)|| search == null).ToList());
-
+            return View(db.Staff.Where(x => x.UserName.Contains(search)|| search == null).ToList());
            
         }
+
+        /////////Registraatioonn /////////////
+        [HttpGet]
+        public ActionResult Register ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(Staff staff)
+        {
+            if (ModelState.IsValid)
+            {
+                staff.Role = 0;
+                db.Staff.Add(staff);
+                db.SaveChanges();
+                return RedirectToAction("LoggedIn");
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "some error occured!");
+            }
+            return View(staff);
+        }
+
+
 
     }
 }

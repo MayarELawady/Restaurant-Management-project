@@ -20,6 +20,7 @@ namespace Restaurant_Management.Models
         public int phone { get; set; }
         public float Salary { get; set; }
         public string Daysoff { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime JoinedDate { get; set; }
         public IList<Order> Order { get; set; }
         public IList<Bill> Bill { get; set; }
