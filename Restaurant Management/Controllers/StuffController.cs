@@ -129,5 +129,14 @@ namespace Restaurant_Management.Controllers
             return View(Employee);
         }
 
+        ///////////////SEARCH FOR EMPLOYEE///////////////
+        public ActionResult SearchEmployee(string search)
+        {
+
+    return View(db.Staff.Where(x => x.UserName.Contains(search)|| search == null).ToList());
+
+           
+        }
+
     }
 }

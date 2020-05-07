@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Restaurant_Management.Models.Staff>
+
+@{
+    ViewBag.Title = "SearchEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchEmployee</h2>
+
+<p>
+    @using (Html.BeginForm("SearchEmployee", "Stuff", FormMethod.Post))
+
+    {
+        @Html.TextBox("search")
+        <input type="submit" value="search" />
+    }
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Phone</th>
+                <th>Salary</th>
+                <th>Daysoff</th>
+                <th>Joined Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="3" style="color:red">
+                        No Match Any Document
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.phone</td>
+                        <td>@item.Salary</td>
+                        <td>@item.Daysoff</td>
+                        <td>@item.JoinedDate</td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>   
+    @Html.ActionLink("Create New", "Create")
+

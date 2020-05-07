@@ -191,6 +191,7 @@
     <Content Include="Views\Stuff\UpdateAdminProfile.cshtml" />
     <Content Include="Views\Stuff\ListEmployees.cshtml" />
     <Content Include="Views\Stuff\EmployeeDetails.cshtml" />
+    <Content Include="Views\Stuff\SearchEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
