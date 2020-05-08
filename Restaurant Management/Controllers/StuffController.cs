@@ -161,7 +161,33 @@ namespace Restaurant_Management.Controllers
             return View(staff);
         }
 
+        /////////////////ListCustomers////////////////
+        public ActionResult ListCustomers() 
+        {
+            return View(db.Customer.ToList());
+        }
 
+        ////////////////ADD CUSTOMER////////////
+        [HttpGet]
+        public ActionResult AddCustomer()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddCustomer(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Customer.Add(customer);
+                db.SaveChanges();
+                return RedirectToAction("ListCustomers");
+            }
+            else
+            {
+                ModelState.AddModelError("", "some error occured!");
+            }
+            return View();
+        }
 
     }
 }

@@ -212,6 +212,8 @@
     <Content Include="Views\Stuff\EmployeeDetails.cshtml" />
     <Content Include="Views\Stuff\SearchEmployee.cshtml" />
     <Content Include="Views\Stuff\Register.cshtml" />
+    <Content Include="Views\Stuff\ListCustomers.cshtml" />
+    <Content Include="Views\Stuff\AddCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
