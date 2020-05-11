@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -188,6 +189,72 @@ namespace Restaurant_Management.Controllers
             }
             return View();
         }
+        //---------------------ADD EMPLOYEE--------------------------------------------
+
+        public ActionResult AddEmployee ()
+        {
+            Staff staff = new Staff();
+
+            return View(staff);
+        }
+        [HttpPost]
+        public ActionResult AddEmployee (Staff staff)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Staff.Add(staff);
+                db.SaveChanges();
+                return RedirectToAction("ListEmployees");
+            }
+
+            return View(staff);
+        }
+        //----------------------UPDATE EMPLOYEE--------------------------------------------------------------
+
+        public ActionResult UpdateEmployeeProfile(int? id)
+        {
+             if (id == null)
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             Staff staff = db.Staff.Find(id);
+             if (staff == null)
+                 return HttpNotFound();
+             return View(staff);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateEmployeeProfile(Staff staff)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(staff).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ListEmployees");
+            }
+            return View(staff);
+        }
+
+        //------------------------DELETE EMPLOYEE-------------------------------------------------------
+
+        public ActionResult DeleteEmployee(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Staff staff = db.Staff.Find(id);
+            if (staff == null)
+                return HttpNotFound();
+            return View(staff);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteEmployee(int id)
+        {
+            Staff staff = db.Staff.Find(id);
+            db.Staff.Remove(staff);
+            db.SaveChanges();
+            return RedirectToAction("ListEmployees");
+           
+        }
+
 
     }
 }

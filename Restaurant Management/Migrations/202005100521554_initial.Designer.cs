@@ -13,7 +13,7 @@ namespace Restaurant_Management.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202005070302091_initial"; }
+            get { return "202005100521554_initial"; }
         }
         
         string IMigrationMetadata.Source
