@@ -217,7 +217,6 @@
     <Content Include="Views\Stuff\AddEmployee.cshtml" />
     <Content Include="Views\Stuff\UpdateEmployeeProfile.cshtml" />
     <Content Include="Views\Stuff\DeleteEmployee.cshtml" />
-    <Content Include="Views\Stuff\ListMeals.cshtml" />
     <Content Include="Views\Stuff\AddMeals.cshtml" />
   </ItemGroup>
   <ItemGroup>
