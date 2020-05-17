@@ -255,6 +255,26 @@ namespace Restaurant_Management.Controllers
            
         }
 
+        ////////////////////////////ADD MEALS//////////////////////////
+        public ActionResult AddMeals()
+        {
+            Meal new_meals = new Meal();
 
+            return View(new_meals);
+        }
+        [HttpPost]
+        public ActionResult AddMeals(Meal new_meals)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Meal.Add(new_meals);
+                db.SaveChanges();
+                return RedirectToAction("ListMeals"); // Requires Action method hereeeeee with the same name "ListMeal"..  ya nancaaaay <3
+            }
+
+            return View(new_meals);
+        }
+
+       
     }
 }
