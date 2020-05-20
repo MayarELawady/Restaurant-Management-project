@@ -275,6 +275,13 @@ namespace Restaurant_Management.Controllers
             return View(new_meals);
         }
 
-       
+        //////////////////////////LIST Meals///////////////////////////////////
+        public ActionResult ListMeal()
+        {
+            return View(db.Meal.ToList());
+        }
+
+
     }
 }
+

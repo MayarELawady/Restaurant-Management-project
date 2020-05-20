@@ -219,6 +219,9 @@
     <Content Include="Views\Stuff\DeleteEmployee.cshtml" />
     <Content Include="Views\Stuff\AddMeals.cshtml" />
     <Content Include="Views\Customer\SearchCustomer.cshtml" />
+    <Content Include="Views\Stuff\Logout.cshtml" />
+    <Content Include="Views\Stuff\UpdateMeal.cshtml" />
+    <Content Include="Views\Stuff\ListMeal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
