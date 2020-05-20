@@ -134,9 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005170910050_initial.cs" />
-    <Compile Include="Migrations\202005170910050_initial.designer.cs">
-      <DependentUpon>202005170910050_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202005201423046_initial.cs" />
+    <Compile Include="Migrations\202005201423046_initial.designer.cs">
+      <DependentUpon>202005201423046_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -218,6 +218,7 @@
     <Content Include="Views\Stuff\UpdateEmployeeProfile.cshtml" />
     <Content Include="Views\Stuff\DeleteEmployee.cshtml" />
     <Content Include="Views\Stuff\AddMeals.cshtml" />
+    <Content Include="Views\Customer\SearchCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,8 +227,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005170910050_initial.resx">
-      <DependentUpon>202005170910050_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005201423046_initial.resx">
+      <DependentUpon>202005201423046_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

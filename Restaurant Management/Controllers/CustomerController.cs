@@ -79,6 +79,13 @@ namespace Restaurant_Management.Controllers
             }
         }
 
+        // search for Customer
+        public ActionResult SearchCustomer(string search)
+        {
+            return View(db.Customer.Where(x => x.Name.Contains(search) || search == null).ToList());
+
+        }
+
         // GET: Customer/Delete/5
         public ActionResult Delete(int? id)
         {
