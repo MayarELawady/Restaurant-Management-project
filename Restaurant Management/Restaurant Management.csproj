@@ -222,6 +222,7 @@
     <Content Include="Views\Stuff\Logout.cshtml" />
     <Content Include="Views\Stuff\UpdateMeal.cshtml" />
     <Content Include="Views\Stuff\ListMeal.cshtml" />
+    <Content Include="Views\Stuff\SearchMeal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

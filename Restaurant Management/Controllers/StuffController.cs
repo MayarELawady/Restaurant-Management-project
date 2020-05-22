@@ -281,6 +281,11 @@ namespace Restaurant_Management.Controllers
             return View(db.Meal.ToList());
         }
 
+        /////////////////////////////SEARCH Meals//////////////////////////////
+        public ActionResult SearchMeal(string SM)
+        {
+            return View(db.Meal.Where(x => x.Name.Contains(SM) || SM == null).ToList());
+        }
 
     }
 }

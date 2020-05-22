@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Restaurant_Management.Models.Meal>
+@{
+    ViewBag.Title = "SearchMeal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchMeal</h2>
+
+<p>
+    @using (Html.BeginForm("SearchMeal", "Stuff", FormMethod.Post))
+
+    {
+        @Html.TextBox("SM")
+        <input type="submit" value="search" />
+    }
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Size</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="3" style="color:red">
+                        No Match Any Document
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>@item.Price</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("Create New", "AddMeal")
