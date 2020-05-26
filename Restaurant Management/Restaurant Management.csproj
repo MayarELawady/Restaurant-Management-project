@@ -134,9 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005201423046_initial.cs" />
-    <Compile Include="Migrations\202005201423046_initial.designer.cs">
-      <DependentUpon>202005201423046_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202005250402590_initial.cs" />
+    <Compile Include="Migrations\202005250402590_initial.designer.cs">
+      <DependentUpon>202005250402590_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -187,7 +187,9 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -223,6 +225,7 @@
     <Content Include="Views\Stuff\UpdateMeal.cshtml" />
     <Content Include="Views\Stuff\ListMeal.cshtml" />
     <Content Include="Views\Stuff\SearchMeal.cshtml" />
+    <Content Include="Views\Stuff\DeleteMeal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,8 +234,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005201423046_initial.resx">
-      <DependentUpon>202005201423046_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005250402590_initial.resx">
+      <DependentUpon>202005250402590_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

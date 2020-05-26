@@ -269,7 +269,7 @@ namespace Restaurant_Management.Controllers
             {
                 db.Meal.Add(new_meals);
                 db.SaveChanges();
-                return RedirectToAction("ListMeals"); // Requires Action method hereeeeee with the same name "ListMeal"..  ya nancaaaay <3
+                return RedirectToAction("ListMeal"); // Requires Action method hereeeeee with the same name "ListMeal"..  ya nancaaaay <3
             }
 
             return View(new_meals);
@@ -286,6 +286,62 @@ namespace Restaurant_Management.Controllers
         {
             return View(db.Meal.Where(x => x.Name.Contains(SM) || SM == null).ToList());
         }
+
+        //------------------------UPDATE MEALS-------------------------------------------------------
+        public ActionResult UpdateMeal(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Meal meal = db.Meal.Find(id);
+            if (meal == null)
+                return HttpNotFound();
+            return View(meal);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateMeal(Meal meal)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(meal).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ListMeal");
+            }
+            return View(meal);
+        }
+
+        //------------------------DELETE MEALS-------------------------------------------------------
+        public ActionResult DeleteMeal(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Meal meal = db.Meal.Find(id);
+            if (meal == null)
+                return HttpNotFound();
+            return View(meal);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteMeal(int id)
+        {
+            Meal meal = db.Meal.Find(id);
+            db.Meal.Remove(meal);
+            db.SaveChanges();
+            return RedirectToAction("ListMeal");
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
