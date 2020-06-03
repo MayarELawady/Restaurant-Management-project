@@ -38,17 +38,22 @@
             {
                 foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.UserName</td>
-                        <td>@item.phone</td>
-                        <td>@item.Salary</td>
-                        <td>@item.Daysoff</td>
-                        <td>@item.JoinedDate</td>
+                    if (item.Role == 0)
+                    {
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td>@item.phone</td>
+                            <td>@item.Salary</td>
+                            <td>@item.Daysoff</td>
+                            <td>@item.JoinedDate</td>
 
-                    </tr>
+                        </tr>
+}
                 }
             }
         </tbody>
-    </table>   
+    </table>
     @Html.ActionLink("Create New", "AddEmployee")
-
+    <div>
+        @Html.ActionLink("Back", "LoggedIn")
+    </div>

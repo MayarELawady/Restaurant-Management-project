@@ -331,7 +331,18 @@ namespace Restaurant_Management.Controllers
 
         }
 
+        ////////////////////Employee module/////////////////
+        public ActionResult EmployeeModule()
+        {
+            return View();
+        }
 
+        ///////////////Meal Module/////////////////
+
+        public ActionResult MealModule()
+        {
+            return View();
+        }
 
 
 
