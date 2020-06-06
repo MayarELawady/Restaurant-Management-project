@@ -10,6 +10,8 @@ namespace Restaurant_Management.Models
     {
         [Key]
         public int CustomerId { get; set; }
+        [Display(Name = "Customer Name")]
+        [Required(ErrorMessage = "Username is required.")]
         public string Name { get; set; }
         public int Phone { get; set; }
         public string Mail { get; set; }

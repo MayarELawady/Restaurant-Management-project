@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 using Restaurant_Management.Context;
 using Restaurant_Management.Models;
 
@@ -62,6 +63,14 @@ namespace Restaurant_Management.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            AuthenticationManager.Unregister(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Employee()
@@ -150,8 +159,10 @@ namespace Restaurant_Management.Controllers
             if (ModelState.IsValid)
             {
                 staff.Role = 0;
-                db.Staff.Add(staff);
+                var usr = db.Staff.Add(staff);
                 db.SaveChanges();
+                Session["UserId"] = usr.StaffId.ToString();
+                Session["UserName"] = usr.UserName.ToString();
                 return RedirectToAction("LoggedIn");
 
             }

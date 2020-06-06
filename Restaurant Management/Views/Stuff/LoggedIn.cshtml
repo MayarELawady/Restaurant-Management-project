@@ -1,42 +1,21 @@
 ﻿@model Restaurant_Management.Models.Staff
-
 @{
     ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 
 @if (Session["UserId"] != null)
 {
     <h4>Hello @Session["UserName".ToString()]</h4>
 
     <p>@Html.ActionLink("Update Admin Profile", "UpdateAdminProfile", new { id = Session["UserId"] }, null)</p>
-    
+
     <div>
         <p>    @Html.ActionLink("Employees Module", "EmployeeModule") </p>
     </div>
     <div>
         <p>    @Html.ActionLink("Meals Module", "MealModule") </p>
     </div>
-
-
-
-
-
-
-
-
-    @*<p>@Html.ActionLink("List Employees", "ListEmployees")</p>*@
-    @*<p>@Html.ActionLink("Add New Meal", "AddMeals")</p>*@
-
-    <!---SEARCHHH-->
-
-    @*using (Html.BeginForm("SearchEmployee", "Stuff", FormMethod.Post))
-
-        {
-            @Html.TextBox("search")
-            <input type="submit" value="search" />
-        }*@
-
-
-
 }
-

@@ -11,6 +11,7 @@ namespace Restaurant_Management.Models
     {
         [Key]
         public int OrderNo { get; set; }
+        public string ORDERTest { get; set; }
         public DateTime Date { get; set; }
         public DateTime Time { get; set; }
         public int Num_Of_Items { get; set; }

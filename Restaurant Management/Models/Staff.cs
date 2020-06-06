@@ -11,7 +11,7 @@ namespace Restaurant_Management.Models
         [Key]
         public int StaffId { get; set; }
         public int Role { get; set; }
-        [Display(Name = "User Name")]
+        [Display(Name = "Stuff Member Name")]
         [Required(ErrorMessage = "Username is required.")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Password is required.")]

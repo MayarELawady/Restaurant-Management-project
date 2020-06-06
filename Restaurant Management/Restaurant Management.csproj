@@ -52,6 +52,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -125,18 +128,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="Context\Resturant.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\orderController.cs" />
     <Compile Include="Controllers\StuffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006031345527_initial.cs" />
-    <Compile Include="Migrations\202006031345527_initial.designer.cs">
-      <DependentUpon>202006031345527_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202006031802510_init.cs" />
+    <Compile Include="Migrations\202006031802510_init.designer.cs">
+      <DependentUpon>202006031802510_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006040946287_inittt.cs" />
+    <Compile Include="Migrations\202006040946287_inittt.designer.cs">
+      <DependentUpon>202006040946287_inittt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006041000399_initttialy.cs" />
+    <Compile Include="Migrations\202006041000399_initttialy.designer.cs">
+      <DependentUpon>202006041000399_initttialy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006060813420_NewOrderProberity.cs" />
+    <Compile Include="Migrations\202006060813420_NewOrderProberity.designer.cs">
+      <DependentUpon>202006060813420_NewOrderProberity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006060855411_updates.cs" />
+    <Compile Include="Migrations\202006060855411_updates.designer.cs">
+      <DependentUpon>202006060855411_updates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -145,6 +168,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\OrderC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -177,6 +201,13 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -203,8 +234,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Stuff\LoggedIn.cshtml" />
-    <Content Include="Views\Stuff\Login.cshtml" />
     <Content Include="Views\Stuff\Employee.cshtml" />
     <Content Include="Views\Customer\UpdateProfile.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
@@ -228,16 +257,36 @@
     <Content Include="Views\Stuff\DeleteMeal.cshtml" />
     <Content Include="Views\Stuff\EmployeeModule.cshtml" />
     <Content Include="Views\Stuff\MealModule.cshtml" />
+    <Content Include="Views\order\ListOrders.cshtml" />
+    <Content Include="Views\order\MakeOrder.cshtml" />
+    <Content Include="Views\order\Delete.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Stuff\Login.cshtml" />
+    <Content Include="Views\Stuff\LoggedIn.cshtml" />
+    <Content Include="Views\Stuff\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006031345527_initial.resx">
-      <DependentUpon>202006031345527_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006031802510_init.resx">
+      <DependentUpon>202006031802510_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006040946287_inittt.resx">
+      <DependentUpon>202006040946287_inittt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041000399_initttialy.resx">
+      <DependentUpon>202006041000399_initttialy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006060813420_NewOrderProberity.resx">
+      <DependentUpon>202006060813420_NewOrderProberity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006060855411_updates.resx">
+      <DependentUpon>202006060855411_updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
