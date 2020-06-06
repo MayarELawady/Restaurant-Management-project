@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Restaurant_Management.Context;
@@ -356,7 +357,29 @@ namespace Restaurant_Management.Controllers
         }
 
 
+        ////////////    LOGOUT /////////////////
+        
+        public partial class Logout : System.Web.UI.Page
+        {
 
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                if (!Page.IsPostBack)
+                {
+                    Session.Abandon();
+                    Session.Remove("username");
+                    Session.Remove("password");
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
+        }
+
+        /// Logout function.test//////
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
+        }
 
 
 

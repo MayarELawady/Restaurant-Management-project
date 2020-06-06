@@ -141,6 +141,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202006031802510_init.cs" />
     <Compile Include="Migrations\202006031802510_init.designer.cs">
       <DependentUpon>202006031802510_init.cs</DependentUpon>
@@ -160,6 +161,11 @@
     <Compile Include="Migrations\202006060855411_updates.cs" />
     <Compile Include="Migrations\202006060855411_updates.designer.cs">
       <DependentUpon>202006060855411_updates.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\202006052305040_initial.cs" />
+    <Compile Include="Migrations\202006052305040_initial.designer.cs">
+      <DependentUpon>202006052305040_initial.cs</DependentUpon>
+>>>>>>> 2fc606d4103e734f86218bd88bb42a19ae4d336b
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -273,6 +279,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202006031802510_init.resx">
       <DependentUpon>202006031802510_init.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +294,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006060855411_updates.resx">
       <DependentUpon>202006060855411_updates.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\202006052305040_initial.resx">
+      <DependentUpon>202006052305040_initial.cs</DependentUpon>
+>>>>>>> 2fc606d4103e734f86218bd88bb42a19ae4d336b
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
