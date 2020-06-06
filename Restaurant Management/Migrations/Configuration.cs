@@ -1,4 +1,4 @@
-﻿namespace Restaurant_Management.Migrations
+﻿namespace Restaurant_Management_project.Migrations
 {
     using System;
     using System.Data.Entity;

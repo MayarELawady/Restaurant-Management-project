@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Management;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Restaurant_Management
+namespace Restaurant_Management_project
 {
     public class MvcApplication : System.Web.HttpApplication
     {
