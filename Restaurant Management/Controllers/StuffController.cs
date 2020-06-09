@@ -31,10 +31,11 @@ namespace Restaurant_Management.Controllers
         [HttpPost]
         public ActionResult Login(Staff staff)
         {
-            var usr = db.Staff.Single(u => u.UserName == staff.UserName && u.Password == staff.Password);
-            var st = usr.Role;
+            var usr = db.Staff.FirstOrDefault(u => u.UserName == staff.UserName && u.Password == staff.Password);
+            
             if (usr != null)
             {
+                var st = usr.Role;
                 Session["UserId"] = usr.StaffId.ToString();
                 Session["UserName"] = usr.UserName.ToString();
                 if (st == 1)
@@ -43,7 +44,7 @@ namespace Restaurant_Management.Controllers
                     return RedirectToAction("Employee");
                 else
                     return HttpNotFound();
-                //return RedirectToAction("LoggedIn");
+               
             }
             else
             {
@@ -159,7 +160,7 @@ namespace Restaurant_Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                staff.Role = 0;
+                staff.Role = 1;
                 var usr = db.Staff.Add(staff);
                 db.SaveChanges();
                 Session["UserId"] = usr.StaffId.ToString();

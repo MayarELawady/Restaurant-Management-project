@@ -5,15 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    <div class="navbar-collapse collapse"> @Html.Partial("_LoginPartial")</div>
+
 <h2 style="text-align:center">Register</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
     
+    @Html.AntiForgeryToken()
+
     <div class="form-horizontal" style="width: 40%; margin: 0px auto;">
-       
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
