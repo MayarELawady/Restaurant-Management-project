@@ -56,6 +56,9 @@
       <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Rotativa.1.7.4-rc\lib\net45\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -145,6 +148,10 @@
     <Compile Include="Migrations\202006061545225_initialy.designer.cs">
       <DependentUpon>202006061545225_initialy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006082325210_addpriceinOrderModel.cs" />
+    <Compile Include="Migrations\202006082325210_addpriceinOrderModel.designer.cs">
+      <DependentUpon>202006082325210_addpriceinOrderModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -152,6 +159,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\OrderMeal.cs" />
     <Compile Include="ViewModel\OrderC.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,11 +171,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CustomScript.js" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -231,6 +244,7 @@
     <Content Include="Views\Stuff\UpdateEmployeeProfile.cshtml" />
     <Content Include="Views\Stuff\UpdateMeal.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\order\CreateBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,6 +267,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006061545225_initialy.resx">
       <DependentUpon>202006061545225_initialy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006082325210_addpriceinOrderModel.resx">
+      <DependentUpon>202006082325210_addpriceinOrderModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

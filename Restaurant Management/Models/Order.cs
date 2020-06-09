@@ -15,6 +15,7 @@ namespace Restaurant_Management.Models
         public DateTime Date { get; set; }
         public DateTime Time { get; set; }
         public int Num_Of_Items { get; set; }
+        public float price { get; set; }
         public IList<Meal> Meal { get; set; }
         [ForeignKey("Staff")]
         public int? StaffId { get; set; }

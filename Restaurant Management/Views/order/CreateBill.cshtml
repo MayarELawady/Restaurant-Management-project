@@ -1,0 +1,32 @@
+﻿@model Restaurant_Management.Models.Order
+
+@{
+    ViewBag.Title = "CreateBill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align :center"><kbd>Bill</kbd></h1>
+@Html.ActionLink("Brint bill", "PrintAll", new { id = Model.OrderNo })
+
+<h4 class="font-weight-bold">Order No: @Html.DisplayFor(model => model.OrderNo)</h4> 
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col"> Date </th>
+            <th scope="col">Time</th>
+            <th scope= "col" > Number of items </th >
+            <th scope = "col" > Price </th >
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+      
+            <td>@Html.DisplayFor(model => model.Customer.Name)</td>
+            <td>@Html.DisplayFor(model => model.Date)</td>
+            <td>@Html.DisplayFor(model => model.Time)</td>
+            <td>@Html.DisplayFor(model => model.Num_Of_Items)</td>
+            <td>@Html.DisplayFor(model => model.price)</td>
+        </tr>
+    </tbody>
+</table>

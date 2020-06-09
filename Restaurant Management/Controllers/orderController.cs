@@ -8,6 +8,7 @@ using Restaurant_Management.Models;
 using Restaurant_Management.ViewModel;
 using System.Data.Entity;
 using System.Net;
+using Rotativa;
 
 namespace Restaurant_Management.Controllers
 {
@@ -95,5 +96,36 @@ namespace Restaurant_Management.Controllers
                 return View();
             }
         }
+
+        ////////////////////CreatBill//////////////
+        public ActionResult CreateBill(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order order = db.Order.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(order);
+            
+        }
+
+        //////////////////////////////PRINT BILL////////////////////
+        //public ActionResult PrintAll()
+        //{
+        //    var q = new ActionAsPdf("CreateBill");
+        //    return q;
+        //}
+
+        public ActionResult PrintAll(int? id)
+        {
+            return new ActionAsPdf("CreateBill", new { id = id })
+            { FileName = "Bill.pdf" };
+        }
+
+
     }
 }
