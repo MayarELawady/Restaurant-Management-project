@@ -8,21 +8,23 @@
 
 @if (Session["UserId"] != null)
 {
-    <h4>Hello @Session["UserName".ToString()]</h4>
+    <br />
+    <br />
+    <h1>
+        <p class="text-success"><strong>Hello @Session["UserName".ToString()] In Stuff View</strong></p>
+    </h1>
 
-    <p>@Html.ActionLink("Update Admin Profile", "UpdateAdminProfile", new { id = Session["UserId"] }, null)</p>
+    <br />
+    <br />
 
     <div>
-        <p>    @Html.ActionLink("Employees Module", "EmployeeModule") </p>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Employees Module", "EmployeeModule")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Meals Module", "MealModule")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("List Of Orders", "ListOrders", "Order")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Make An Order", "MakeOrder", "Order")</button>
     </div>
-    <div>
-        <p>    @Html.ActionLink("Meals Module", "MealModule") </p>
-    </div>
-    <div>
-        <p>    @Html.ActionLink("List Of Orders", "ListOrders", "Order") </p>
-    </div>
-    <div>
-        <p>    @Html.ActionLink("Make An Order", "MakeOrder", "Order") </p>
-    </div>
+
+    <br />
+    <br />
 
 }

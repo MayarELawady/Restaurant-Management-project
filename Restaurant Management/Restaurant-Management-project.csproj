@@ -144,13 +144,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006061545225_initialy.cs" />
-    <Compile Include="Migrations\202006061545225_initialy.designer.cs">
-      <DependentUpon>202006061545225_initialy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006082325210_addpriceinOrderModel.cs" />
-    <Compile Include="Migrations\202006082325210_addpriceinOrderModel.designer.cs">
-      <DependentUpon>202006082325210_addpriceinOrderModel.cs</DependentUpon>
+    <Compile Include="Migrations\202006101107248_init.cs" />
+    <Compile Include="Migrations\202006101107248_init.designer.cs">
+      <DependentUpon>202006101107248_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -245,6 +241,7 @@
     <Content Include="Views\Stuff\UpdateMeal.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\order\CreateBill.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,11 +262,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006061545225_initialy.resx">
-      <DependentUpon>202006061545225_initialy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006082325210_addpriceinOrderModel.resx">
-      <DependentUpon>202006082325210_addpriceinOrderModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006101107248_init.resx">
+      <DependentUpon>202006101107248_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

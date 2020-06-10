@@ -7,13 +7,13 @@ namespace Restaurant_Management_project.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addpriceinOrderModel : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addpriceinOrderModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006082325210_addpriceinOrderModel"; }
+            get { return "202006101107248_init"; }
         }
         
         string IMigrationMetadata.Source

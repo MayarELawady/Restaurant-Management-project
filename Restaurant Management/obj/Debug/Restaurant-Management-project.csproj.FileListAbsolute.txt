@@ -117,9 +117,6 @@ F:\asp\projs\Restaurant-Management-project\Restaurant Management\bin\System.Web.
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\bin\Newtonsoft.Json.xml
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\bin\Antlr3.Runtime.pdb
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.csprojAssemblyReference.cache
-F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant_Management_project.Migrations.initialy.resources
-F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.csproj.GenerateResource.cache
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.csproj.CopyComplete
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.dll
 F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.pdb
@@ -188,3 +185,7 @@ E:\level3\sec term\sw2-project\Restaurant-Management-project\Restaurant Manageme
 E:\level3\sec term\sw2-project\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.pdb
 E:\level3\sec term\sw2-project\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant_Management_project.Migrations.addpriceinOrderModel.resources
 E:\level3\sec term\sw2-project\Restaurant-Management-project\Restaurant Management\bin\Rotativa.dll
+F:\asp\projs\Restaurant-Management-project\Restaurant Management\bin\Rotativa.dll
+F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant_Management_project.Migrations.init.resources
+F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.csproj.GenerateResource.cache
+F:\asp\projs\Restaurant-Management-project\Restaurant Management\obj\Debug\Restaurant-Management-project.csprojAssemblyReference.cache

@@ -6,5 +6,28 @@
 
 @if (Session["UserId"] != null)
 {
-    <h4>In employee view Hello @Session["UserName".ToString()]</h4>}
+    <br />
+    <br />
+    <h1>
+        <p class="text-success"><strong>Hello @Session["UserName".ToString()] In employee view</strong></p>
+    </h1>
 
+
+    <br />
+    <br />
+
+    <div>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("List Of Customers", "Index", "Customer")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Search Customer", "SearchCustomer", "Customer")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Create a new customer", "Create", "Customer")</button>
+
+    </div>
+    <br />
+    <div>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Update customer profile", "UpdateProfile", "Customer")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("List Of Orders", "ListOrders", "Order")</button>
+        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Make An Order", "MakeOrder", "Order")</button>
+    </div>
+    <br />
+    <br />
+}
